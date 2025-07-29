@@ -7,11 +7,11 @@ interface Slide {
   subtitle: string;
 }
 
-interface CarouselProps {
+interface HeroCarouselProps {
   slides: Slide[];
 }
 
-export default function Carousel({ slides }: CarouselProps) {
+export default function HeroCarousel({ slides }: HeroCarouselProps) {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const nextSlide = () => {
@@ -48,11 +48,11 @@ export default function Carousel({ slides }: CarouselProps) {
           />
 
           {/* Conteúdo sobreposto */}
-          <div className="absolute inset-0 bg-black/30 flex flex-col justify-center px-10 sm:px-36 font-heading text-light_grey">
+          <div className="absolute inset-0 bg-black/30 flex flex-col justify-center px-10 sm:px-36 font-heading text-cloud_white">
             <h5 className="text-xl sm:text-4xl font-bold mb-4">
               {slide.subtitle}
             </h5>
-            <h1 className="text-6xl sm:text-8xl font-semibold text-light_pink">
+            <h1 className="text-6xl sm:text-8xl font-semibold text-rose_quartz">
               {slide.title}
             </h1>
           </div>
@@ -62,14 +62,14 @@ export default function Carousel({ slides }: CarouselProps) {
       {/* Controles */}
       <button
         onClick={prevSlide}
-        className="absolute top-1/2 left-4 transform -translate-y-1/2 z-20 bg-white/30 hover:bg-white/50 text-dark_grey p-2 rounded-full"
+        className="absolute top-1/2 left-4 transform -translate-y-1/2 z-20 bg-cloud_white/30 hover:bg-cloud_white/50 text-stone_grey p-2 rounded-full"
         aria-label="Anterior"
       >
         ❮
       </button>
       <button
         onClick={nextSlide}
-        className="absolute top-1/2 right-4 transform -translate-y-1/2 z-20 bg-white/30 hover:bg-white/50 text-dark_grey p-2 rounded-full"
+        className="absolute top-1/2 right-4 transform -translate-y-1/2 z-20 bg-cloud_white/30 hover:bg-cloud_white/50 text-stone_grey p-2 rounded-full"
         aria-label="Próximo"
       >
         ❯
@@ -82,7 +82,7 @@ export default function Carousel({ slides }: CarouselProps) {
             key={index}
             onClick={() => setCurrentSlide(index)}
             className={`w-3 h-3 rounded-full ${
-              index === currentSlide ? "bg-light_pink" : "bg-white/50"
+              index === currentSlide ? "bg-rose_quartz" : "bg-cloud_white/50"
             }`}
             aria-label={`Slide ${index + 1}`}
           ></button>

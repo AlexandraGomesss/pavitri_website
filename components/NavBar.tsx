@@ -3,37 +3,35 @@ import Image from "next/image";
 
 export default function NavBar() {
   return (
-    <nav className="w-full flex items-center justify-between shadow-md absolute top-0 left-0 z-20 bg-black/20 px-16 py-4">
+    <nav className="w-full flex items-center justify-between absolute top-0 left-0 z-20 px-16 py-4 bg-black bg-opacity-30 shadow-md">
       {/* Logo */}
-      <div className="flex-col items-center gap-2">
-        <Image
-          src="/images/Logo-PNG-sem-tagline2.png"
-          alt="Logo"
-          width={180}
-          height={50}
-          priority
-        />
-      </div>
+      <Image
+        src="/images/Logo-PNG-sem-tagline2.png"
+        alt="Logo"
+        width={180}
+        height={90}
+        priority
+      />
 
       {/* Menu */}
-      <ul className="hidden md:flex gap-8 text-vibrant_green font-semibold font-heading text-xl">
+      <ul className="hidden md:flex gap-8 text-cloud_white font-semibold font-heading text-xl">
         <li>
-          <Link href="/" className="hover:text-light_pink transition">
+          <Link href="/" className="hover:text-rose_quartz transition">
             Home
           </Link>
         </li>
         <li>
-          <Link href="/about" className="hover:text-light_pink transition">
+          <Link href="/about" className="hover:text-rose_quartz transition">
             About
           </Link>
         </li>
         <li>
-          <Link href="/services" className="hover:text-light_pink transition">
+          <Link href="/services" className="hover:text-rose_quartz transition">
             Services
           </Link>
         </li>
         <li>
-          <Link href="/contact" className="hover:text-light_pink transition">
+          <Link href="/contact" className="hover:text-rose_quartz transition">
             Contact
           </Link>
         </li>
@@ -43,7 +41,7 @@ export default function NavBar() {
       <div>
         <Link
           href="/get-started"
-          className="bg-light_pink text-dark_green font-heading font-extrabold text-lg px-6 py-4 rounded-xl hover:bg-pink hover:text-off-black transition"
+          className="bg-moss_green text-cloud_white font-heading font-extrabold text-xl px-6 py-4 rounded-xl hover:bg-forest_shadow transition"
         >
           Marcar Sessão
         </Link>
