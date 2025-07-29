@@ -15,6 +15,10 @@ module.exports = {
         light_grey: "#F9F9F9",
         dark_grey: "#2E2E2E",
       },
+      fontFamily: {
+        body: ["Source Sans Pro", "sans-serif"],
+        heading: ["Quicksand", "sans-serif"],
+      },
     },
   },
   plugins: [],

@@ -11,7 +11,7 @@ export default function NavBar() {
       </div>
 
       {/* Menu */}
-      <ul className="hidden md:flex gap-8 text-vibrant_green font-semibold text-2xl">
+      <ul className="hidden md:flex gap-8 text-vibrant_green font-semibold font-heading text-xl">
         <li>
           <Link href="/" className="hover:text-light_pink transition">
             Home
@@ -38,7 +38,7 @@ export default function NavBar() {
       <div>
         <Link
           href="/get-started"
-          className="bg-light_pink text-dark_green font-semibold text-lg px-6 py-4 rounded-xl hover:bg-pink hover:text-off-black transition"
+          className="bg-light_pink text-dark_green font-heading font-extrabold text-lg px-6 py-4 rounded-xl hover:bg-pink hover:text-off-black transition"
         >
           Marcar Sessão
         </Link>
