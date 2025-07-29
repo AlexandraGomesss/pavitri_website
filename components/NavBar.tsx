@@ -1,13 +1,18 @@
 import Link from "next/link";
 import Image from "next/image";
-import nav_logo from "@/app/images/Logo-PNG-sem-tagline2.png";
 
 export default function NavBar() {
   return (
     <nav className="w-full flex items-center justify-between shadow-md absolute top-0 left-0 z-20 bg-black/20 px-16 py-4">
       {/* Logo */}
       <div className="flex-col items-center gap-2">
-        <Image src={nav_logo} alt="Logo" width={180} height={180} />
+        <Image
+          src="/images/Logo-PNG-sem-tagline2.png"
+          alt="Logo"
+          width={180}
+          height={50}
+          priority
+        />
       </div>
 
       {/* Menu */}
