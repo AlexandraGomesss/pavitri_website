@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 
 interface Slide {
@@ -13,21 +13,30 @@ interface HeroCarouselProps {
 
 export default function HeroCarousel({ slides }: HeroCarouselProps) {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const intervalRef = useRef<NodeJS.Timeout | null>(null);
+
+  const resetAutoSlide = () => {
+    if (intervalRef.current) clearInterval(intervalRef.current);
+    intervalRef.current = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    }, 5000);
+  };
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % slides.length);
+    resetAutoSlide();
   };
 
   const prevSlide = () => {
     setCurrentSlide((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
+    resetAutoSlide();
   };
 
-  // Auto-slide (opcional)
   useEffect(() => {
-    const interval = setInterval(() => {
-      nextSlide();
-    }, 5000); // muda de slide a cada 5s
-    return () => clearInterval(interval);
+    resetAutoSlide();
+    return () => {
+      if (intervalRef.current) clearInterval(intervalRef.current);
+    };
   }, [slides.length]);
 
   return (
@@ -80,7 +89,10 @@ export default function HeroCarousel({ slides }: HeroCarouselProps) {
         {slides.map((_, index) => (
           <button
             key={index}
-            onClick={() => setCurrentSlide(index)}
+            onClick={() => {
+              setCurrentSlide(index);
+              resetAutoSlide();
+            }}
             className={`w-3 h-3 rounded-full ${
               index === currentSlide ? "bg-rose_quartz" : "bg-cloud_white/50"
             }`}
