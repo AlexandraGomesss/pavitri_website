@@ -94,7 +94,7 @@ export default function Footer() {
                 </li>
                 <li>
                   <h3 className="text-rose_quartz font-semibold text-lg">
-                    / FAQ's
+                    / FAQ&apos;s
                   </h3>
                 </li>
                 <li>

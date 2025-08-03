@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import Image from "next/image";
 
 interface Slide {
@@ -15,12 +15,14 @@ export default function HeroCarousel({ slides }: HeroCarouselProps) {
   const [currentSlide, setCurrentSlide] = useState(0);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
-  const resetAutoSlide = () => {
-    if (intervalRef.current) clearInterval(intervalRef.current);
+  const resetAutoSlide = useCallback(() => {
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current);
+    }
     intervalRef.current = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
     }, 5000);
-  };
+  }, [slides.length]);
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % slides.length);
@@ -37,7 +39,7 @@ export default function HeroCarousel({ slides }: HeroCarouselProps) {
     return () => {
       if (intervalRef.current) clearInterval(intervalRef.current);
     };
-  }, [slides.length]);
+  }, [resetAutoSlide]);
 
   return (
     <div className="relative w-full h-screen overflow-hidden">
@@ -56,7 +58,7 @@ export default function HeroCarousel({ slides }: HeroCarouselProps) {
             className="object-cover"
           />
 
-          {/* Conteúdo sobreposto */}
+          {/* Overlay content */}
           <div className="absolute inset-0 bg-black/30 flex flex-col justify-center px-10 sm:px-36 font-heading text-cloud_white">
             <h5 className="text-xl sm:text-4xl font-bold mb-4">
               {slide.subtitle}
@@ -68,7 +70,7 @@ export default function HeroCarousel({ slides }: HeroCarouselProps) {
         </div>
       ))}
 
-      {/* Controles */}
+      {/* Controls */}
       <button
         onClick={prevSlide}
         className="absolute top-1/2 left-8 transform -translate-y-1/2 z-20 bg-cloud_white/30 hover:bg-cloud_white/50 text-stone_grey p-2 rounded-full text-4xl"
@@ -84,7 +86,7 @@ export default function HeroCarousel({ slides }: HeroCarouselProps) {
         ❯
       </button>
 
-      {/* Indicadores */}
+      {/* Indicators */}
       <div className="absolute bottom-5 left-1/2 transform -translate-x-1/2 z-20 flex space-x-2">
         {slides.map((_, index) => (
           <button
