@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import Image from "next/image";
 
 interface Product {
@@ -14,20 +14,31 @@ interface ProductSliderProps {
 
 const ProductSlider: React.FC<ProductSliderProps> = ({ products }) => {
   const containerRef = useRef<HTMLDivElement | null>(null);
+  const cardRef = useRef<HTMLDivElement | null>(null);
+  const [cardWidth, setCardWidth] = useState(0);
 
-  const scrollNext = (): void => {
+  useEffect(() => {
+    if (cardRef.current) {
+      const rect = cardRef.current.getBoundingClientRect();
+      const style = getComputedStyle(cardRef.current);
+      const gap = parseInt(style.marginRight || "0"); // caso esteja com margin
+      setCardWidth(rect.width + gap + 24); // 24px = gap-6 (1.5rem), ajuste se necessário
+    }
+  }, []);
+
+  const scrollNext = () => {
     if (containerRef.current) {
       containerRef.current.scrollBy({
-        left: containerRef.current.clientWidth,
+        left: cardWidth,
         behavior: "smooth",
       });
     }
   };
 
-  const scrollPrev = (): void => {
+  const scrollPrev = () => {
     if (containerRef.current) {
       containerRef.current.scrollBy({
-        left: -containerRef.current.clientWidth,
+        left: -cardWidth,
         behavior: "smooth",
       });
     }
@@ -35,7 +46,6 @@ const ProductSlider: React.FC<ProductSliderProps> = ({ products }) => {
 
   return (
     <div className="relative w-full overflow-visible">
-      {/* Slider Controls fora dos cartões */}
       <button
         onClick={scrollPrev}
         type="button"
@@ -53,14 +63,14 @@ const ProductSlider: React.FC<ProductSliderProps> = ({ products }) => {
         ❯
       </button>
 
-      {/* Slider Container sem barra de scroll e com padding */}
       <div
         ref={containerRef}
-        className="flex overflow-x-hidden scroll-smooth snap-x snap-mandatory gap-6 px-6"
+        className="flex overflow-x-hidden scroll-smooth snap-x snap-mandatory gap-6 p-6"
       >
-        {products.map((product) => (
+        {products.map((product, index) => (
           <div
             key={product.id}
+            ref={index === 0 ? cardRef : null}
             className="snap-start flex-shrink-0 basis-1/3 bg-clay_beige rounded-2xl shadow-lg p-6 flex flex-col"
           >
             <div className="rounded-xl overflow-hidden mb-4">

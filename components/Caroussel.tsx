@@ -71,14 +71,14 @@ export default function HeroCarousel({ slides }: HeroCarouselProps) {
       {/* Controles */}
       <button
         onClick={prevSlide}
-        className="absolute top-1/2 left-4 transform -translate-y-1/2 z-20 bg-cloud_white/30 hover:bg-cloud_white/50 text-stone_grey p-2 rounded-full"
+        className="absolute top-1/2 left-8 transform -translate-y-1/2 z-20 bg-cloud_white/30 hover:bg-cloud_white/50 text-stone_grey p-2 rounded-full text-4xl"
         aria-label="Anterior"
       >
         ❮
       </button>
       <button
         onClick={nextSlide}
-        className="absolute top-1/2 right-4 transform -translate-y-1/2 z-20 bg-cloud_white/30 hover:bg-cloud_white/50 text-stone_grey p-2 rounded-full"
+        className="absolute top-1/2 right-8 transform -translate-y-1/2 z-20 bg-cloud_white/30 hover:bg-cloud_white/50 text-stone_grey p-2 rounded-full text-4xl"
         aria-label="Próximo"
       >
         ❯

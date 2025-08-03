@@ -24,6 +24,20 @@ module.exports = {
         // light_grey: "#F9F9F9",
         // dark_grey: "#2E2E2E",
       },
+      keyframes: {
+        fade: {
+          "0%": { opacity: 0, translateY: "20px" },
+          "100%": { opacity: 1, translateY: "0" },
+        },
+        pulseHover: {
+          "0%,100%": { opacity: 1 },
+          "50%": { opacity: 0.85, transform: "scale(1.03)" },
+        },
+      },
+      animation: {
+        "fade-in": "fade 1.2s ease-out both",
+        pulseHover: "pulseHover 3s ease-in-out infinite",
+      },
       fontFamily: {
         body: ["Source Sans Pro", "sans-serif"],
         heading: ["Quicksand", "sans-serif"],
