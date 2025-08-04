@@ -42,7 +42,7 @@ export default function Sobre_Mim() {
                 corpo físico.
               </p>
               <p>
-                Pavitri é um nome de origem Indiana, que significa
+                Pavitri é um nome de origem Indiana, que significa&nbsp;
                 <em>Pureza Sagrada</em>, este nome simboliza a essência, a
                 energia que sinto e canalizo durante a meditação e prática
                 pessoal.

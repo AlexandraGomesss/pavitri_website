@@ -47,7 +47,7 @@ export default function NavBar() {
           </Link>
         </li>
         <li>
-          <Link href="/contacto" className="hover:text-rose_quartz transition">
+          <Link href="/Contacto" className="hover:text-rose_quartz transition">
             Contacto
           </Link>
         </li>
