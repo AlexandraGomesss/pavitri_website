@@ -45,7 +45,7 @@ const ProductSlider: React.FC<ProductSliderProps> = ({ products }) => {
   };
 
   return (
-    <div className="relative w-full overflow-visible">
+    <div className="relative w-full overflow-visible font-body">
       <button
         onClick={scrollPrev}
         type="button"

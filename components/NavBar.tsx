@@ -1,9 +1,25 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 export default function NavBar() {
+  const pathname = usePathname();
+  const isHome = pathname === "/";
+
   return (
-    <nav className="w-full flex items-center justify-between absolute top-0 left-0 z-20 px-16 py-4 bg-black bg-opacity-30 shadow-md">
+    <nav
+      className={`
+        w-full flex items-center justify-between
+        px-16 py-4 z-20 shadow-md
+        ${
+          isHome
+            ? "absolute top-0 left-0 bg-black/30"
+            : "sticky top-0 bg-forest_shadow"
+        }
+      `}
+    >
       {/* Logo */}
       <Image
         src="/images/Logo-PNG-sem-tagline2.png"
@@ -21,8 +37,8 @@ export default function NavBar() {
           </Link>
         </li>
         <li>
-          <Link href="/about" className="hover:text-rose_quartz transition">
-            About
+          <Link href="/Sobre_mim" className="hover:text-rose_quartz transition">
+            Sobre mim
           </Link>
         </li>
         <li>
@@ -31,21 +47,19 @@ export default function NavBar() {
           </Link>
         </li>
         <li>
-          <Link href="/contact" className="hover:text-rose_quartz transition">
-            Contact
+          <Link href="/contacto" className="hover:text-rose_quartz transition">
+            Contacto
           </Link>
         </li>
       </ul>
 
       {/* Call to Action */}
-      <div>
-        <Link
-          href="/get-started"
-          className="bg-moss_green text-cloud_white font-heading font-extrabold text-xl px-6 py-4 rounded-xl hover:bg-forest_shadow transition"
-        >
-          Marcar Sessão
-        </Link>
-      </div>
+      <Link
+        href="/get-started"
+        className="bg-moss_green text-cloud_white font-heading font-extrabold text-xl px-6 py-4 rounded-xl hover:bg-forest_shadow transition"
+      >
+        Marcar Sessão
+      </Link>
     </nav>
   );
 }

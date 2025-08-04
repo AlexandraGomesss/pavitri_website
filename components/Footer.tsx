@@ -8,7 +8,7 @@ import {
 
 export default function Footer() {
   return (
-    <footer className="bg-forest_shadow text-cloud_white mt-16 relative pb-6">
+    <footer className="bg-forest_shadow text-cloud_white mt-8relative pb-6 font-body">
       {/* Container principal de menu */}
       <div className="mx-auto px-6 md:px-12 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 items-start">
@@ -28,7 +28,7 @@ export default function Footer() {
           <div className="md:col-span-3 grid grid-cols-3 gap-x-2 justify-items-center mr-96">
             {/* Coluna 1: Ana Pavitri */}
             <div className="space-y-2 text-center md:text-left">
-              <h3 className="text-rose_quartz font-semibold text-lg">
+              <h3 className="text-rose_quartz font-bold text-lg font-heading">
                 / Ana Pavitri
               </h3>
               <ul className="space-y-1 text-md">
@@ -47,7 +47,7 @@ export default function Footer() {
 
             {/* Coluna 2: Produtos */}
             <div className="space-y-2 text-center md:text-left">
-              <h3 className="text-rose_quartz font-semibold text-lg">
+              <h3 className="text-rose_quartz font-bold text-lg font-heading">
                 / Produtos
               </h3>
               <ul className="space-y-1 text-md">
@@ -88,17 +88,17 @@ export default function Footer() {
             <div className="space-y-2 text-center md:text-left">
               <ul className="space-y-4 text-md">
                 <li>
-                  <h3 className="text-rose_quartz font-semibold text-lg">
+                  <h3 className="text-rose_quartz font-bold text-lg font-heading">
                     / Contactos
                   </h3>
                 </li>
                 <li>
-                  <h3 className="text-rose_quartz font-semibold text-lg">
+                  <h3 className="text-rose_quartz font-bold text-lg font-heading">
                     / FAQ&apos;s
                   </h3>
                 </li>
                 <li>
-                  <h3 className="text-rose_quartz font-semibold text-lg">
+                  <h3 className="text-rose_quartz font-bold text-lg font-heading">
                     / Testemunhos
                   </h3>
                 </li>
@@ -106,43 +106,33 @@ export default function Footer() {
             </div>
           </div>
         </div>
-      </div>
 
-      {/* Ícones de WhatsApp e Telegram no canto inferior direito */}
-      <div className="absolute bottom-16 right-16 flex flex-col items-end space-y-8">
-        <a
-          href="https://wa.me/"
-          aria-label="WhatsApp"
-          className="text-5xl hover:text-sky_blue transition-colors"
-        >
-          <FaWhatsapp />
-        </a>
-        <a
-          href="https://t.me/"
-          aria-label="Telegram"
-          className="text-5xl hover:text-sky_blue transition-colors"
-        >
-          <FaTelegramPlane />
-        </a>
-      </div>
-
-      {/* Ícones sociais */}
-      <div className=" border-clay_beige/30">
-        <div className="mx-auto max-w-7xl px-6 md:px-12 py-6 flex items-center justify-center space-x-6">
-          <FaInstagram
-            size={36}
-            className="hover:text-sky_blue transition-colors cursor-pointer"
-          />
-          <FaFacebook
-            size={36}
-            className="hover:text-sky_blue transition-colors cursor-pointer"
-          />
+        {/* Ícones sociais */}
+        <div className=" border-clay_beige/30 mt-8">
+          <div className="mx-auto max-w-7xl px-6 md:px-12 py-6 flex items-center justify-center space-x-6">
+            <FaInstagram
+              size={36}
+              className="hover:text-sky_blue transition-colors cursor-pointer"
+            />
+            <FaFacebook
+              size={36}
+              className="hover:text-sky_blue transition-colors cursor-pointer"
+            />
+            <FaWhatsapp
+              size={36}
+              className="hover:text-sky_blue transition-colors cursor-pointer"
+            />
+            <FaTelegramPlane
+              size={36}
+              className="hover:text-sky_blue transition-colors cursor-pointer"
+            />
+          </div>
         </div>
       </div>
 
       {/* Links legais e rodapé */}
       <div className=" border-clay_beige/30">
-        <div className="mx-auto max-w-7xl px-6 md:px-12 py-4 flex flex-col md:flex-row items-center justify-between text-sm">
+        <div className="mx-auto max-w-7xl px-6 md:px-12 flex flex-col md:flex-row items-center justify-between text-sm">
           <div className="space-x-3 text-stone_grey">
             <a href="#" className="hover:text-sky_blue transition-colors">
               Condições de Utilização
