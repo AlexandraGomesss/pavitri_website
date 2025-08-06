@@ -55,7 +55,7 @@ export default function HeroCarousel({ slides }: HeroCarouselProps) {
             alt={slide.title}
             fill
             priority={index === 0}
-            className="object-cover"
+            className="object-cover brightness-110"
           />
 
           {/* Overlay content */}
