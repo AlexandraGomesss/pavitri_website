@@ -56,7 +56,7 @@ export default function NavBar() {
       {/* Call to Action */}
       <Link
         href="/get-started"
-        className="bg-moss_green text-cloud_white font-heading font-extrabold text-xl px-6 py-4 rounded-xl hover:bg-forest_shadow transition"
+        className="bg-moss_green text-cloud_white font-heading font-extrabold text-xl px-6 py-4 rounded-xl hover:bg-cloud_white hover:text-moss_green hover:scale-105 transition"
       >
         Marcar Sessão
       </Link>
