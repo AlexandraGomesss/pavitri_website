@@ -33,12 +33,18 @@ export default function Footer() {
               </h3>
               <ul className="space-y-1 text-md">
                 <li>
-                  <a href="#" className="hover:text-sky_blue transition-colors">
+                  <a
+                    href="/Sobre_mim"
+                    className="hover:text-sky_blue transition-colors"
+                  >
                     Sobre mim
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-sky_blue transition-colors">
+                  <a
+                    href="/Sobre_mim"
+                    className="hover:text-sky_blue transition-colors"
+                  >
                     Formação / Certificação
                   </a>
                 </li>
@@ -52,7 +58,10 @@ export default function Footer() {
               </h3>
               <ul className="space-y-1 text-md">
                 <li>
-                  <a href="#" className="hover:text-sky_blue transition-colors">
+                  <a
+                    href="/Produtos/milagres-acontecem"
+                    className="hover:text-sky_blue transition-colors"
+                  >
                     Milagres Acontecem
                   </a>
                 </li>
@@ -89,17 +98,22 @@ export default function Footer() {
               <ul className="space-y-4 text-md">
                 <li>
                   <h3 className="text-rose_quartz font-bold text-lg font-heading">
-                    / Contactos
+                    <a
+                      href="/Contacto"
+                      className="hover:text-sky_blue transition-colors"
+                    >
+                      / Contacto
+                    </a>
                   </h3>
                 </li>
                 <li>
                   <h3 className="text-rose_quartz font-bold text-lg font-heading">
-                    / FAQ&apos;s
-                  </h3>
-                </li>
-                <li>
-                  <h3 className="text-rose_quartz font-bold text-lg font-heading">
-                    / Testemunhos
+                    <a
+                      href="/Testemunhos"
+                      className="hover:text-sky_blue transition-colors"
+                    >
+                      / Testemunhos
+                    </a>
                   </h3>
                 </li>
               </ul>

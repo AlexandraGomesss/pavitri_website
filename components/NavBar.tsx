@@ -42,8 +42,13 @@ export default function NavBar() {
           </Link>
         </li>
         <li>
-          <Link href="/services" className="hover:text-rose_quartz transition">
-            Services
+          <Link href="/Produtos" className="hover:text-rose_quartz transition">
+            Produtos
+          </Link>
+        </li>
+        <li>
+          <Link href="/Servicos" className="hover:text-rose_quartz transition">
+            Serviços
           </Link>
         </li>
         <li>

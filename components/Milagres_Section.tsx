@@ -19,7 +19,7 @@ export default function Milagres_Section() {
       <div className="flex flex-col justify-between absolute inset-0 bg-gradient-to-b from-forest-shadow/80 to-transparent" />
 
       {/* Conteúdo principal */}
-      <div className="relative z-10 flex flex-col justify-between gap-8 px-6 md:px-12 py-6 md:py-12">
+      <div className="relative z-10 flex flex-col justify-between h-full px-6 md:px-12 py-6 md:py-12">
         {/* Bloco de texto no topo */}
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-rose_quartz font-heading">
           Os&nbsp;Milagres
@@ -28,7 +28,7 @@ export default function Milagres_Section() {
         </h1>
         <div className=" flex flex-col max-w-md text-left">
           <p className="text-md md:text-lg tracking-widest uppercase text-sage-mist ">
-            APRENDE A SUBIR A VIBRAÇÃO E TRANSFORMA A TUA VIDA
+            {/*APRENDE A SUBIR A VIBRAÇÃO E TRANSFORMA A TUA VIDA*/}
           </p>
           <p className="text-base md:text-lg font-medium text-sky-blue">
             Programa de Manifestação Energética
@@ -38,8 +38,8 @@ export default function Milagres_Section() {
         {/* Bloco de CTA no fundo, alinhado à esquerda */}
         <div className="pb-8">
           <a
-            href="#detalhes"
-            className="inline-block bg-moss_green text-cloud_white px-12 py-5 text-xl md:text-2xl font-semibold rounded-full shadow-lg transition-colors duration-300 ease-out
+            href="/Produtos/milagres-acontecem"
+            className="inline-block bg-moss_green text-cloud_white px-12 py-5 text-xl md:text-2xl font-semibold rounded-lg shadow-lg transition-colors duration-300 ease-out
              hover:bg-forest_shadow focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-rose_quartz/70"
             aria-label="Descobre o Teu Milagre"
           >

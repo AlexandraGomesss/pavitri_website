@@ -26,7 +26,7 @@ const slidesData = [
 const sliderData = [
   {
     id: 1,
-    image: "/images/formacoes.webp",
+    image: "/images/cursos_e_produtos_digitais_cut.webp",
     title: "Formações",
     summary:
       "Aprenda habilidades para o sucesso pessoal e profissional com aulas personalizadas.",
@@ -56,6 +56,13 @@ const sliderData = [
     id: 5,
     image: "/images/bg2-corpo.webp",
     title: "Massagens",
+    summary:
+      "Sessão de massagem guiada para ajudar pessoas a alcançar o sucesso pessoal e profissional.",
+  },
+  {
+    id: 6,
+    image: "/images/bg2-corpo.webp",
+    title: "Reiki",
     summary:
       "Sessão de massagem guiada para ajudar pessoas a alcançar o sucesso pessoal e profissional.",
   },

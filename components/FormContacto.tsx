@@ -41,10 +41,9 @@ export default function FormContacto() {
               Fala comigo e descobre como despertar a tua cura interior.
             </p>
             <p className="text-forest_shadow text-base mb-4">
-              Contacta-me através Whatsapp, E-mail, Instagram , Facebook ou
-              Telegram. Basta clicares num dos ícones abaixo.
+              Contacta-me através de:
             </p>
-            <div className="flex justify-center gap-6 text-stone_grey mb-6">
+            <div className="flex justify-end gap-6 text-stone_grey mb-6 mt-6">
               <Link href="https://wa.me/XXXXXXXXXXX" aria-label="WhatsApp">
                 <FaWhatsapp className="w-6 h-6 hover:text-moss_green transition-transform duration-300 transform hover:scale-110" />
               </Link>
@@ -64,12 +63,12 @@ export default function FormContacto() {
           </div>
 
           <div className="text-center">
-            <CTAButton
+            {/* <CTAButton
               href="/get-started"
               size="xl"
               rounded="xl"
               text="Conecta-te"
-            />
+            /> */}
             <p className="mt-8 text-forest_shadow text-sm">
               Muito Amor e Luz no teu coração ♡
               <br />
