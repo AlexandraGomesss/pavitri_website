@@ -1,3 +1,5 @@
+// app/Produtos/[slug]/page.tsx
+import type { Metadata, ResolvingMetadata } from "next";
 import { products } from "@/data/catalog";
 import {
   ItemHeader,
@@ -10,40 +12,39 @@ import { notFound } from "next/navigation";
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 
-export const dynamicParams = false; // only build the slugs we export
-export const revalidate = 60; // ISR (optional)
+export const dynamicParams = false; // só constroi os slugs exportados
+export const revalidate = 60; // ISR opcional
 
 export async function generateStaticParams() {
   return products.map((p) => ({ slug: p.slug }));
 }
 
-export function generateMetadata({ params }: { params: { slug: string } }) {
-  const p = products.find((x) => x.slug === params.slug);
+export async function generateMetadata(
+  { params }: { params: Promise<{ slug: string }> },
+  _parent: ResolvingMetadata
+): Promise<Metadata> {
+  const { slug } = await params;
+  const p = products.find((x) => x.slug === slug);
   return {
     title: p ? `${p.title} | Pavitri` : "Produto | Pavitri",
-    description: p?.summary,
+    description: p?.summary ?? "",
   };
 }
 
-export default function ProdutoSlugPage({
+export default async function ProdutoSlugPage({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  const product = products.find((p) => p.slug === params.slug);
+  const { slug } = await params;
+
+  const product = products.find((p) => p.slug === slug);
   if (!product) return notFound();
 
   return (
     <main className="min-h-screen bg-cloud_white text-stone_grey font-body">
       <NavBar />
       <div className="mx-auto max-w-7xl px-6 md:px-8 py-6 md:py-10 w-full">
-        {/* <Breadcrumb
-          items={[
-            { href: "/", label: "Início" },
-            { href: "/produtos", label: "Produtos" },
-            { href: `#`, label: product.title },
-          ]}
-        /> */}
         <ItemHeader
           title={product.title}
           tag={product.tag}

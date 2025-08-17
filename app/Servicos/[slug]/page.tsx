@@ -1,3 +1,5 @@
+// app/Servicos/[slug]/page.tsx  (ajusta o caminho se for diferente)
+import type { Metadata, ResolvingMetadata } from "next";
 import { services } from "@/data/catalog";
 import {
   ItemHeader,
@@ -10,40 +12,39 @@ import { notFound } from "next/navigation";
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 
-export const dynamicParams = false; // only build the slugs we export
-export const revalidate = 60; // ISR (optional)
+export const dynamicParams = false;
+export const revalidate = 60;
 
 export async function generateStaticParams() {
   return services.map((s) => ({ slug: s.slug }));
 }
 
-export function generateMetadata({ params }: { params: { slug: string } }) {
-  const s = services.find((x) => x.slug === params.slug);
+export async function generateMetadata(
+  { params }: { params: Promise<{ slug: string }> },
+  _parent: ResolvingMetadata
+): Promise<Metadata> {
+  const { slug } = await params;
+  const s = services.find((x) => x.slug === slug);
   return {
     title: s ? `${s.title} | Pavitri` : "Serviço | Pavitri",
-    description: s?.summary,
+    description: s?.summary ?? "",
   };
 }
 
-export default function ServicoSlugPage({
+export default async function ServicoSlugPage({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  const service = services.find((s) => s.slug === params.slug);
+  const { slug } = await params;
+
+  const service = services.find((s) => s.slug === slug);
   if (!service) return notFound();
 
   return (
     <main className="min-h-screen bg-cloud_white text-stone_grey font-body">
       <NavBar />
       <div className="mx-auto max-w-7xl px-6 md:px-8 py-6 md:py-10 w-full">
-        {/* <Breadcrumb
-          items={[
-            { href: "/", label: "Início" },
-            { href: "/servicos", label: "Serviços" },
-            { href: `#`, label: service.title },
-          ]}
-        /> */}
         <ItemHeader
           title={service.title}
           tag={service.tag}
