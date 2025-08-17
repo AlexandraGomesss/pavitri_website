@@ -1,6 +1,5 @@
 import { services } from "@/data/catalog";
 import {
-  Breadcrumb,
   ItemHeader,
   ItemBody,
   InfoPanel,

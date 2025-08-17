@@ -1,5 +1,4 @@
 import NavBar from "@/components/NavBar";
-import { NextPage } from "next";
 import Image from "next/image";
 
 export default function Meditacao() {

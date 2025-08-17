@@ -10,7 +10,7 @@ import {
 import { Card, CardContent } from "@/components/ui/Card";
 import Link from "next/link";
 import Image from "next/image";
-import { CTAButton } from "@/components/ui/CTAButton";
+// import { CTAButton } from "@/components/ui/CTAButton";
 
 export default function FormContacto() {
   return (

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import {
   FaInstagram,
   FaFacebook,
@@ -8,7 +9,7 @@ import {
 
 export default function Footer() {
   return (
-    <footer className="bg-forest_shadow text-cloud_white mt-8relative pb-6 font-body">
+    <footer className="bg-forest_shadow text-cloud_white mt-8 relative pb-6 font-body">
       {/* Container principal de menu */}
       <div className="mx-auto px-6 md:px-12 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 items-start">
@@ -33,20 +34,20 @@ export default function Footer() {
               </h3>
               <ul className="space-y-1 text-md">
                 <li>
-                  <a
+                  <Link
                     href="/Sobre_mim"
                     className="hover:text-sky_blue transition-colors"
                   >
                     Sobre mim
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
+                  <Link
                     href="/Sobre_mim"
                     className="hover:text-sky_blue transition-colors"
                   >
                     Formação / Certificação
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -58,37 +59,52 @@ export default function Footer() {
               </h3>
               <ul className="space-y-1 text-md">
                 <li>
-                  <a
+                  <Link
                     href="/Produtos/milagres-acontecem"
                     className="hover:text-sky_blue transition-colors"
                   >
                     Milagres Acontecem
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-sky_blue transition-colors">
+                  <Link
+                    href="#"
+                    className="hover:text-sky_blue transition-colors"
+                  >
                     Formações
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-sky_blue transition-colors">
+                  <Link
+                    href="#"
+                    className="hover:text-sky_blue transition-colors"
+                  >
                     Cursos Online
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-sky_blue transition-colors">
+                  <Link
+                    href="#"
+                    className="hover:text-sky_blue transition-colors"
+                  >
                     Meditação
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-sky_blue transition-colors">
+                  <Link
+                    href="#"
+                    className="hover:text-sky_blue transition-colors"
+                  >
                     Mentoria
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-sky_blue transition-colors">
+                  <Link
+                    href="#"
+                    className="hover:text-sky_blue transition-colors"
+                  >
                     Massagens
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -98,22 +114,22 @@ export default function Footer() {
               <ul className="space-y-4 text-md">
                 <li>
                   <h3 className="text-rose_quartz font-bold text-lg font-heading">
-                    <a
+                    <Link
                       href="/Contacto"
                       className="hover:text-sky_blue transition-colors"
                     >
                       / Contacto
-                    </a>
+                    </Link>
                   </h3>
                 </li>
                 <li>
                   <h3 className="text-rose_quartz font-bold text-lg font-heading">
-                    <a
+                    <Link
                       href="/Testemunhos"
                       className="hover:text-sky_blue transition-colors"
                     >
                       / Testemunhos
-                    </a>
+                    </Link>
                   </h3>
                 </li>
               </ul>
@@ -122,7 +138,7 @@ export default function Footer() {
         </div>
 
         {/* Ícones sociais */}
-        <div className=" border-clay_beige/30 mt-8">
+        <div className="border-clay_beige/30 mt-8">
           <div className="mx-auto max-w-7xl px-6 md:px-12 py-6 flex items-center justify-center space-x-6">
             <FaInstagram
               size={36}
@@ -145,20 +161,20 @@ export default function Footer() {
       </div>
 
       {/* Links legais e rodapé */}
-      <div className=" border-clay_beige/30">
+      <div className="border-clay_beige/30">
         <div className="mx-auto max-w-7xl px-6 md:px-12 flex flex-col md:flex-row items-center justify-between text-sm">
           <div className="space-x-3 text-stone_grey">
-            <a href="#" className="hover:text-sky_blue transition-colors">
+            <Link href="#" className="hover:text-sky_blue transition-colors">
               Condições de Utilização
-            </a>
+            </Link>
             <span>|</span>
-            <a href="#" className="hover:text-sky_blue transition-colors">
+            <Link href="#" className="hover:text-sky_blue transition-colors">
               Política de Privacidade
-            </a>
+            </Link>
             <span>|</span>
-            <a href="#" className="hover:text-sky_blue transition-colors">
+            <Link href="#" className="hover:text-sky_blue transition-colors">
               Cookies
-            </a>
+            </Link>
           </div>
           <p className="text-stone_grey mt-4 md:mt-0">
             © 2025 Pavitri | Todos os direitos reservados

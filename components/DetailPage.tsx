@@ -2,7 +2,6 @@ import Image from "next/image";
 import { Badge, CTAButton } from "@/components/Card";
 import Section from "@/components/Section";
 import { PageHead } from "@/components/PageHead";
-import NavBar from "./NavBar";
 
 interface DetailPageProps {
   type: "produto" | "servico";
