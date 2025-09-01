@@ -1,6 +1,7 @@
 import Footer from "@/components/Footer";
 import NavBar from "@/components/NavBar";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Sobre_Mim() {
   return (
@@ -226,7 +227,7 @@ export default function Sobre_Mim() {
             Queres Saber mais?
           </h3>
           <button className="px-6 py-2 border border-cloud_white text-cloud_white text-lg md:text-xl font-heading font-extrabold rounded-md hover:bg-cloud_white hover:text-moss_green transition">
-            Contactar
+            <Link href="/Contacto">Contactar</Link>
           </button>
         </div>
       </section>
